@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_app/helper/pageTransition.dart';
 import 'package:shopping_app/ui/cart_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,6 +9,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   AppBar _appBar() {
     return AppBar(
       backgroundColor: Colors.white10,
@@ -251,13 +253,14 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (ctx) =>
-                CartScreen(
-                  imgUrl :"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/666566/1.jpg?3745",
-                  name: "Beoplay",
-                  price: 755,
-                )
-              ));
+                  Navigator.of(context).push(
+                    createRoute(
+                      context, 
+                    CartScreen(
+                     imgUrl :"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/666566/1.jpg?3745",
+                     name: "Beoplay",
+                     price: 755,
+                  )));
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -291,13 +294,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (ctx) =>
-                CartScreen(
-                  imgUrl :"https://img10.joybuy.com/N0/s560x560_jfs/t1/116161/13/9449/170203/5ed9b867Ea90a3680/5aa9cd7e022d5c02.jpg.dpg",
-                  name: "Beoplay",
-                  price: 755
-                )
-              ));
+              Navigator.of(context).push(
+                    createRoute(
+                      context, 
+                    CartScreen(
+                     imgUrl :"https://img10.joybuy.com/N0/s560x560_jfs/t1/116161/13/9449/170203/5ed9b867Ea90a3680/5aa9cd7e022d5c02.jpg.dpg",
+                     name: "Beoplay",
+                     price: 755,
+                  )));
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -484,4 +488,5 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+  
 }
