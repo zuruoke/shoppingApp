@@ -40,7 +40,7 @@ class _CartScreenState extends State<CartScreen> {
         bottomRight: Radius.circular(35),
       ),
       child: Container(
-        height: 350,
+        height: 420,
         child: 
           Stack(
         children: [
@@ -78,7 +78,7 @@ class _CartScreenState extends State<CartScreen> {
 
   iconBackButton(){
     return Positioned(
-      child: IconButton(icon: Icon(Icons.arrow_back_ios_sharp), 
+      child: IconButton(icon: Icon(Icons.arrow_back_ios_sharp, size: 30, color: Colors.white,), 
       color: Colors.white,
       onPressed: (){
         Navigator.pop(context);
@@ -105,8 +105,8 @@ class _CartScreenState extends State<CartScreen> {
         },
         child: Stack(
       children: [
-        IconButton(icon: Icon(Icons.shopping_cart_outlined), 
-      color: Colors.black,
+        IconButton(icon: Icon(Icons.shopping_cart_outlined, size: 30,), 
+      color: Colors.white,
       onPressed: (){}
         ),
       Positioned(
@@ -119,10 +119,10 @@ class _CartScreenState extends State<CartScreen> {
   nmInIcon(){
     return Stack(
       children: [
-         Icon(Icons.brightness_1_sharp, size: 15, color: Colors.blue),
+         Icon(Icons.brightness_1_sharp, size: 17, color: Colors.blue),
 
          Positioned(
-           top: 1, right: 3,
+           top: 1, right: 4,
            child: Text("3", style: TextStyle(fontSize: 11, color: Colors.white),)),
       ],
     );
@@ -145,24 +145,24 @@ class _CartScreenState extends State<CartScreen> {
         Row(
           children: [
             Padding(padding: EdgeInsets.only(left: 20)),
-            Text(widget.name, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),)
+            Text(widget.name, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
           ],
         ),
         Padding(padding: EdgeInsets.only(top:10)),
         Row(
           children: [
             Padding(padding: EdgeInsets.only(left: 20)),
-            Text('${widget.price}', style: TextStyle(fontSize: 20),)
+            Text('£${widget.price}', style: TextStyle(fontSize: 20, color: Colors.deepPurpleAccent),)
           ],
         ),
         Padding(padding: EdgeInsets.only(top:20)),
         Row(
           children: [
             Padding(padding: EdgeInsets.only(left: 20)),
-            Text("Color", )
+            Text("Color", style: TextStyle(fontSize: 20),)
           ],
         ),
-        Padding(padding: EdgeInsets.only(top: 15)),
+        Padding(padding: EdgeInsets.only(top: 20)),
         Row(
           children: [
             Padding(padding: EdgeInsets.only(left: 45)),
@@ -227,26 +227,26 @@ class _CartScreenState extends State<CartScreen> {
             ),),
           ],
         ),
-        Padding(padding: EdgeInsets.only(top:20)),
+        Padding(padding: EdgeInsets.only(top:25)),
         Row(
           children: [
             Padding(padding: EdgeInsets.only(left: 20)),
-            Text("Size",)
+            Text("Size",style: TextStyle(fontSize: 20),)
           ],
         ),
-        Padding(padding: EdgeInsets.only(top: 10)),
+        Padding(padding: EdgeInsets.only(top: 20)),
         Row(
           children: [
         SizedBox(width: 20,),
         Container(
-          height: 20,
+          height: 25,
           width: 370,
           color: Colors.grey[200],
           child: lineButton(),
         ),
         ]
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: 30,),
         Row(
         children: [
           SizedBox(width: 20,),
@@ -291,7 +291,7 @@ class _CartScreenState extends State<CartScreen> {
           },
           child: Container(
              width: 30, height: 70,
-            child: Text("   S"),
+            child: Text("   S", style: TextStyle(fontSize: 15),),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3),
               color: selected == 'S' ? Colors.blue : Colors.grey[200],
@@ -305,7 +305,7 @@ class _CartScreenState extends State<CartScreen> {
           },
           child: Container(
              width: 30, height: 70,
-            child: Text("  M"),
+            child: Text("  M", style: TextStyle(fontSize: 15),),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3),
               color: selected == 'M' ? Colors.blue : Colors.grey[200],
@@ -319,7 +319,7 @@ class _CartScreenState extends State<CartScreen> {
           },
           child: Container(
              width: 30, height: 70,
-            child: Text("   L"),
+            child: Text("   L", style: TextStyle(fontSize: 15),),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3),
               color: selected == "L" ? Colors.blue : Colors.grey[200],
@@ -333,7 +333,7 @@ class _CartScreenState extends State<CartScreen> {
           },
           child: Container(
              width: 30, height: 70,
-            child: Text("  XL"),
+            child: Text("  XL", style: TextStyle(fontSize: 15),),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3),
               color: selected == 'XL' ? Colors.blue : Colors.grey[200],
@@ -347,7 +347,7 @@ class _CartScreenState extends State<CartScreen> {
           },
           child: Container(
              width: 30, height: 70,
-            child: Text(" XXL"),
+            child: Text("XXL", style: TextStyle(fontSize: 15),),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3),
               color: selected == 'XXL' ? Colors.blue : Colors.grey[200],
@@ -394,7 +394,7 @@ class _CartScreenState extends State<CartScreen> {
      body: ListView(
        children: [
          topScreen(),
-         SizedBox(height: 10,),
+         SizedBox(height: 15,),
          bottomScreen(),
        ],
      )

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_app/helper/scroll_animation.dart';
 
 class ExploreScreen extends StatefulWidget{
   
@@ -16,11 +17,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text('Explore', style: TextStyle(fontWeight: FontWeight.bold),),
-        SizedBox(width: 260,),
-        Icon(Icons.notifications_none_rounded),
+        Text('Explore', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
+        SizedBox(width: 230,),
+        Icon(Icons.notifications_none_rounded, size: 30),
         SizedBox(width: 25,),
-        Icon(Icons.send_sharp)
+        Icon(Icons.send_sharp, size: 30,)
       ],
     );
   }
@@ -68,7 +69,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           ),
           Positioned(
           top: 140,  left: 20,
-          child: Text("24.90€", style: TextStyle(fontSize: 20),)
+          child: Text("24.90€", style: TextStyle(fontSize: 22),)
           ), 
           Positioned(
             left: 250, top: 0,
@@ -85,11 +86,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-         Text("Popular Deals", style: TextStyle(fontWeight: FontWeight.bold),),
+         Text("Popular Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
           Text('See all'),
           ],
         ),
         Padding(padding: EdgeInsets.only(top:20)),
+        LeftToRight(child: 
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -100,16 +102,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
             Container(
               height: 140, width: 120,
               decoration: BoxDecoration(
-                color: Colors.deepPurpleAccent,
+                color: Colors.greenAccent,
                 image: DecorationImage(
-                  image: NetworkImage('https://media.self.com/photos/5b88555e19143808feb3f844/master/pass/headphones.jpg'),
+                  image: NetworkImage('https://lh3.googleusercontent.com/proxy/t2wzJUJKr5HggK6xIkcQ5Mdqj54k89inOwJzcoWRX2ituZnh4_cSc4jDC_Ewy6E3_VSjLMtoW9Y8F5-UlGE690sxn4ppj74wmgYefNZ0lO4q061c0V0VP-4kPuI1IHbjRQJcx7IM0Qnsfig'),
                   fit: BoxFit.cover)
                 ),
             ),
             Padding(padding: EdgeInsets.only(top:15)),
-            Text("NBA Collection"),
+            Text("MINISO Collection"),
             Padding(padding: EdgeInsets.only(top:8)),
-            Text("£175", style: TextStyle(color: Colors.purple[700] ,fontWeight: FontWeight.bold),),
+            Text("£75", style: TextStyle(color: Colors.purple[700] ,fontWeight: FontWeight.bold),),
             ],
               ),
               Padding(padding: EdgeInsets.all(10)),
@@ -119,16 +121,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
             Container(
               height: 140, width: 120,
               decoration: BoxDecoration(
-                color: Colors.yellow[800],
+                color: Colors.lightGreenAccent,
                 image: DecorationImage(
-                  image: NetworkImage('https://lh3.googleusercontent.com/proxy/cPbc1WAynymIR4ViHWgPpKirRz9ge6W5-UKhnQaSRwog7drVY1prb26l1G_CBKUQu9Ohuivz2hu56z35jMHx1bVGGxqXcUJawAxNrA4R5QMPf3TAYdvAbWHxYPq_eA2O_Wbiwy68IAVzvw'),
+                  image: NetworkImage('https://media.self.com/photos/5b88555e19143808feb3f844/master/pass/headphones.jpg'),
                   fit: BoxFit.cover)
                 ),
             ),
             Padding(padding: EdgeInsets.only(top:15)),
             Text("NFL Collection"),
             Padding(padding: EdgeInsets.only(top:8)),
-            Text("£105", style: TextStyle(color: Colors.purple[700] ,fontWeight: FontWeight.bold),),
+            Text("£69", style: TextStyle(color: Colors.purple[700] ,fontWeight: FontWeight.bold),),
             ],
               ),
               Padding(padding: EdgeInsets.all(10)),
@@ -190,7 +192,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               ),
             ],
           ),
-        ),
+        ),),
         SizedBox(height: 10,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -211,11 +213,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-         Text("Best Sellers", style: TextStyle(fontWeight: FontWeight.bold),),
+         Text("Best Sellers", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
           Text('See all'),
           ],
         ),
         Padding(padding: EdgeInsets.all(10)),
+        LeftToRight(child: 
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -317,7 +320,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               ),
             ],
           ),
-        )
+        )),
       ],
         );
   }
@@ -330,11 +333,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
           child: ListView(
           children: [
             topScreen(),
-            Padding(padding: EdgeInsets.only(top: 20)),
-            secondScreen(),
             Padding(padding: EdgeInsets.only(top: 25)),
+            secondScreen(),
+            Padding(padding: EdgeInsets.only(top: 30)),
             thirdScreen(),
-            Padding(padding: EdgeInsets.only(top: 20)),
+            Padding(padding: EdgeInsets.only(top: 30)),
             fourthScreen(),
           ],
         ),

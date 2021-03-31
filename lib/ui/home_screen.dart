@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/helper/pageTransition.dart';
+import 'package:shopping_app/helper/scroll_animation.dart';
 import 'package:shopping_app/ui/cart_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,14 +16,14 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white10,
       elevation: 0,
       leading: Padding(
-        padding: EdgeInsets.only(left: 13),
+        padding: EdgeInsets.only(left: 10),
         child: profileCircle(),
       ),
       actions: [
         IconButton(
             icon: Icon(
               Icons.search,
-              size: 30,
+              size: 32,
               color: Colors.black,
             ),
             onPressed: () {}),
@@ -33,8 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
   profileCircle() {
     return GestureDetector(
         child: Container(
-          height: 50,
-          width: 50,
+          height: 90,
+          width: 90,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.black,
@@ -51,7 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Categories", style: TextStyle(fontWeight: FontWeight.bold)),
+        Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25,)),
+        LeftToRight(child:
         SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -233,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ],
-            ))
+            ))),
       ],
     );
   }
@@ -244,11 +246,12 @@ class _HomeScreenState extends State<HomeScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Best Selling', style: TextStyle(fontWeight: FontWeight.bold)),
+            Text('Best Selling', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
             Text("See all")
           ],
         ),
         Padding(padding: EdgeInsets.only(top: 20)),
+        LeftToRight(child: 
         Row(
           children: [
             GestureDetector(
@@ -259,7 +262,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     CartScreen(
                      imgUrl :"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/666566/1.jpg?3745",
                      name: "Beoplay",
-                     price: 755,
+                     price: 200,
                   )));
             },
             child: Column(
@@ -282,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text("Band and Oleson"),
                 Padding(padding: EdgeInsets.only(top: 10)),
                 Text(
-                  "£755",
+                  "£200",
                   style: TextStyle(
                       color: Colors.green[700], fontWeight: FontWeight.bold),
                 ),
@@ -299,8 +302,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       context, 
                     CartScreen(
                      imgUrl :"https://img10.joybuy.com/N0/s560x560_jfs/t1/116161/13/9449/170203/5ed9b867Ea90a3680/5aa9cd7e022d5c02.jpg.dpg",
-                     name: "Beoplay",
-                     price: 755,
+                     name: "Lana Marks",
+                     price: 115,
                   )));
             },
             child: Column(
@@ -318,19 +321,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           fit: BoxFit.cover)),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8)),
-                Text("Beoplay", style: TextStyle(fontWeight: FontWeight.bold)),
+                Text("Lana Marks.", style: TextStyle(fontWeight: FontWeight.bold)),
                 Padding(padding: EdgeInsets.only(top: 5)),
-                Text("Band and Oleson"),
+                Text("Moewad Uzabd"),
                 Padding(padding: EdgeInsets.only(top: 10)),
                 Text(
-                  "£755",
+                  "£115",
                   style: TextStyle(
                       color: Colors.green[700], fontWeight: FontWeight.bold),
                 ),
               ],
             ),),
           ],
-        ),
+        ),),
         SizedBox(
           height: 20,
         ),
@@ -338,13 +341,14 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (ctx) =>
-                CartScreen(
-                  imgUrl :"https://images-na.ssl-images-amazon.com/images/I/81Js6bnCtKL._AC_UL1500_.jpg",
-                  name: "Beoplay",
-                  price: 755
-                )
-              ));
+               Navigator.of(context).push(
+                    createRoute(
+                      context, 
+                    CartScreen(
+                     imgUrl :"https://images-na.ssl-images-amazon.com/images/I/81Js6bnCtKL._AC_UL1500_.jpg",
+                     name: "Beoplay",
+                     price: 125,
+                  )));
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -361,12 +365,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           fit: BoxFit.cover)),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8)),
-                Text("Beoplay", style: TextStyle(fontWeight: FontWeight.bold)),
+                Text("Prada", style: TextStyle(fontWeight: FontWeight.bold)),
                 Padding(padding: EdgeInsets.only(top: 5)),
-                Text("Band and Oleson"),
+                Text("Marc and Jacobs"),
                 Padding(padding: EdgeInsets.only(top: 10)),
                 Text(
-                  "£755",
+                  "£125",
                   style: TextStyle(
                       color: Colors.green[700], fontWeight: FontWeight.bold),
                 ),
